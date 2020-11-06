@@ -1,14 +1,14 @@
 "use strict";
 
-const sendReqParam = (req, res) => {
+export const sendReqParam = (req, res) => {
   let veg = req.params.vegetable;
   res.send(`This is the page for ${veg}`);
 };
 
-const respondWithName = (req, res) => {
-  let veg = req.params.vegetable;
-  res.render("index");
+
+export const respondWithName = (req, res) => {
+  let paramsName = req.params.myName;
+  res.render("index", { name: paramsName });
 };
 
-export { sendReqParam, respondWithName }
 
