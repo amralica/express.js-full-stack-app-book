@@ -1,15 +1,35 @@
 "use strict";
 
-export const sendReqParam = (req, res) => {
-  let veg = req.params.vegetable;
-  res.send(`This is the page for ${veg}`);
+var courses = [
+  {
+    title: "Event Driven Cakes",
+    cost: 50
+  },
+  {
+    title: "Asynchronous Artichoke",
+    cost: 25
+  },
+  {
+    title: "Object Oriented Orange Juice",
+    cost: 10
+  }
+];
+
+export function showCourses(req, res) {
+  res.render("courses", {
+    offeredCourses: courses
+  });
+}
+
+export function index(req, res) {
+  res.render("index");
 };
 
 
-export const respondWithName = (req, res) => {
-  let paramsName = req.params.myName;
-  res.render("index", { name: paramsName });
-};
+export function showSignUp(req, res) {
+  res.render("contact");
+}
 
-
-// test
+export function postedSignUpForm(req, res) {
+  res.render("thanks");
+}

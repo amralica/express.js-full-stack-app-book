@@ -13,6 +13,8 @@ node_modules/
 /client/build
 
 # misc
+.keys.js
+keys.js
 .DS_Store
 .env
 .env.local
